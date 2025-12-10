@@ -33,6 +33,8 @@ try:
     print("Connected to MongoDB!")
 except Exception as e:
     print(f"MongoDB Error: {e}")
+    print("Bot will restart in 60 seconds to avoid Rate Limit...")
+    time.sleep(60)
     exit()
 
 def get_user_data(user_id):
@@ -279,3 +281,4 @@ async def balance(interaction: discord.Interaction):
 if __name__ == "__main__":
     keep_alive()
     bot.run(BOT_TOKEN)
+
