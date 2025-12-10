@@ -178,8 +178,7 @@ async def game_loop(channel):
         q_data = questions_bank[idx]
         correct_answer = q_data["answer"].lower().strip()
         
-        # SỬ DỤNG TIMESTAMP THAY VÌ UPDATE LIÊN TỤC ĐỂ TRÁNH RATE LIMIT 429
-        wait_seconds = 20
+        wait_seconds = 15
         end_timestamp = int(time.time() + wait_seconds)
         
         embed = discord.Embed(title=f"Question #{idx+1}", description=f"**{q_data['question']}**", color=0xD4AF37)
@@ -190,19 +189,30 @@ async def game_loop(channel):
         
         def check(m): return m.channel.id == channel.id and not m.author.bot
         
-        try:
-            msg = await bot.wait_for('message', check=check, timeout=wait_seconds)
-            user_ans = msg.content.lower().strip()
+        round_won = False
+        end_time = time.time() + wait_seconds
+
+        while time.time() < end_time:
+            remaining = end_time - time.time()
+            if remaining <= 0: break
             
-            if user_ans == correct_answer:
-                update_user_balance(msg.author.id, balance_change=36)
-                await channel.send(f"✅ Chính xác! <@{msg.author.id}> +36 điểm.")
-                game_data["consecutive_fails"] = 0
-            else:
-                await channel.send(f"❌ Sai rồi! Đáp án đúng là: **{q_data['answer']}**")
-                game_data["consecutive_fails"] += 1
+            try:
+                msg = await bot.wait_for('message', check=check, timeout=remaining)
+                user_ans = msg.content.lower().strip()
                 
-        except asyncio.TimeoutError:
+                if user_ans == correct_answer:
+                    update_user_balance(msg.author.id, balance_change=36)
+                    await channel.send(f"✅ Chính xác! <@{msg.author.id}> +36 điểm.")
+                    game_data["consecutive_fails"] = 0
+                    round_won = True
+                    break 
+                else:
+                    try: await msg.add_reaction("❌") 
+                    except: pass
+            except asyncio.TimeoutError:
+                break
+        
+        if not round_won:
             await channel.send(f"⏰ Hết giờ! Đáp án: **{q_data['answer']}**")
             game_data["consecutive_fails"] += 1
 
@@ -271,13 +281,29 @@ async def rank(interaction: discord.Interaction):
     except Exception as e:
         await interaction.followup.send(f"Lỗi: {e}")
 
-@bot.tree.command(name="balance")
-async def balance(interaction: discord.Interaction):
-    user = get_user_data(interaction.user.id)
-    await interaction.response.send_message(f"💳 **{interaction.user.name}**\n💵 {user.get('balance',0):,.2f}\n🪙 {user.get('btc',0):.6f}")
+@bot.tree.command(name="balance", description="Xem tài sản của bạn hoặc người khác")
+@app_commands.describe(member="Người bạn muốn soi ví (để trống nếu xem của mình)")
+async def balance(interaction: discord.Interaction, member: discord.Member = None):
+    target = member or interaction.user
+    user_data = get_user_data(target.id)
+    bal = float(user_data.get('balance', 0))
+    btc = float(user_data.get('btc', 0))
+    
+    embed = discord.Embed(
+        title=f"💳 Ví của {target.display_name}",
+        color=discord.Color.blue()
+    )
+    if target.avatar:
+        embed.set_thumbnail(url=target.avatar.url)
+    
+    embed.add_field(name="💵 Tiền mặt", value=f"**{bal:,.2f} $**", inline=False)
+    embed.add_field(name="🪙 Bitcoin", value=f"**{btc:.6f} BTC**", inline=False)
+    embed.set_footer(text=f"ID: {target.id}")
+    
+    await interaction.response.send_message(embed=embed)
 
 if __name__ == "__main__":
-    keep_alive() # Chạy server ảo để giữ bot sống
+    keep_alive()
     
     print("🚀 Đang khởi động Bot...")
     
@@ -291,16 +317,11 @@ if __name__ == "__main__":
                 print("Bot đã bị Discord chặn IP tạm thời do khởi động lại quá nhiều.")
                 print("⏳ Hệ thống sẽ tự động ngủ 45 phút để chờ Discord mở khóa...")
                 print("==================================================")
-                # Cho bot ngủ 45 phút (2700 giây) để hết lệnh cấm
-                import time
                 time.sleep(2700)
             else:
-                # Các lỗi mạng khác thì đợi 10s rồi thử lại
                 print(f"⚠️ Lỗi kết nối ({e}), thử lại sau 10s...")
-                import time
                 time.sleep(10)
         except Exception as e:
             print(f"❌ BOT BỊ CRASH: {e}")
             print("⏳ Đợi 30s trước khi khởi động lại để tránh spam...")
-            import time
             time.sleep(30)
