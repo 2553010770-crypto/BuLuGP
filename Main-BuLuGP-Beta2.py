@@ -7,24 +7,22 @@ import asyncio
 import aiohttp
 import os
 import pymongo
-from pymongo.errors import ConnectionFailure, OperationFailure
 from dotenv import load_dotenv
 from keep_alive import keep_alive
 import time
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("DISCORD_TOKEN")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
 
 if not BOT_TOKEN or not MONGO_URI:
-    print("Missing environment variables.")
+    print("Error: Missing BOT_TOKEN or MONGO_URI in environment variables.")
     exit()
 
 DB_NAME = "DiscordBotDB"
 COLLECTION_NAME = "users"
 
-print("Connecting to Database...")
 try:
     mongo_client = pymongo.MongoClient(MONGO_URI)
     mongo_client.admin.command('ping')
@@ -32,7 +30,7 @@ try:
     users_col = db[COLLECTION_NAME]
     print("Connected to MongoDB!")
 except Exception as e:
-    print(f"MongoDB Error: {e}")
+    print(f"MongoDB Connection Error: {e}")
     exit()
 
 def get_user_data(user_id):
@@ -100,14 +98,14 @@ class TransactionModal(discord.ui.Modal):
             
             msg = ""
             if self.action == "BUY":
-                if user_data["balance"] < amount:
+                if user_data.get("balance", 0) < amount:
                     await interaction.response.send_message("❌ Không đủ tiền.", ephemeral=True)
                     return
                 btc_received = amount / self.price
                 update_user_balance(user_id, balance_change=-amount, btc_change=btc_received)
                 msg = f"✅ Mua **{btc_received:.6f} BTC** (-{amount} $)."
             else:
-                if user_data["btc"] < amount:
+                if user_data.get("btc", 0) < amount:
                     await interaction.response.send_message("❌ Không đủ BTC.", ephemeral=True)
                     return
                 points = amount * self.price
@@ -144,7 +142,7 @@ class CryptoView(discord.ui.View):
         self.current_price = await get_btc_price()
         user = get_user_data(interaction.user.id)
         embed = discord.Embed(title="📊 SÀN BTC", description=f"Giá: **${self.current_price:,.2f}**", color=0xF7931A)
-        embed.add_field(name="Ví bạn", value=f"💵 {user['balance']:,.2f}\n🪙 {user['btc']:.6f}")
+        embed.add_field(name="Ví bạn", value=f"💵 {user.get('balance',0):,.2f}\n🪙 {user.get('btc',0):.6f}")
         await interaction.response.edit_message(embed=embed, view=self)
 
 intents = discord.Intents.default()
@@ -161,7 +159,7 @@ async def game_loop(channel):
     
     while game_data["is_active"]:
         if not questions_bank:
-            await channel.send("Hết câu hỏi.")
+            await channel.send("Hết câu hỏi trong file.")
             game_data["is_active"] = False
             break
 
@@ -223,7 +221,7 @@ async def game_loop(channel):
         if not game_data["is_active"]: break
         await asyncio.sleep(4) 
 
-@bot.tree.command(name="startgp")
+@bot.tree.command(name="startgp", description="Bắt đầu Game")
 async def startgp(interaction: discord.Interaction):
     if not questions_bank:
          return await interaction.response.send_message("File câu hỏi trống!", ephemeral=True)
@@ -235,23 +233,23 @@ async def startgp(interaction: discord.Interaction):
     await interaction.response.send_message("**Bắt đầu Trivia!**")
     bot.loop.create_task(game_loop(interaction.channel))
 
-@bot.tree.command(name="stopgp")
+@bot.tree.command(name="stopgp", description="Dừng Game")
 async def stopgp(interaction: discord.Interaction):
     game_data["is_active"] = False
     await interaction.response.send_message("Đã dừng game.", ephemeral=True)
 
-@bot.tree.command(name="bitcoin")
+@bot.tree.command(name="bitcoin", description="Sàn Bitcoin")
 async def bitcoin_cmd(interaction: discord.Interaction):
     await interaction.response.defer()
     price = await get_btc_price()
     user = get_user_data(interaction.user.id)
     view = CryptoView(current_price=price)
     embed = discord.Embed(title="📊 SÀN BTC", description=f"Giá: **${price:,.2f}**", color=0xF7931A)
-    embed.add_field(name="Ví bạn", value=f"💵 {user['balance']:,.2f}\n🪙 {user['btc']:.6f}")
+    embed.add_field(name="Ví bạn", value=f"💵 {user.get('balance',0):,.2f}\n🪙 {user.get('btc',0):.6f}")
     msg = await interaction.followup.send(embed=embed, view=view)
     view.message = msg
 
-@bot.tree.command(name="rank")
+@bot.tree.command(name="rank", description="Bảng xếp hạng")
 async def rank(interaction: discord.Interaction):
     await interaction.response.defer()
     try:
@@ -281,47 +279,35 @@ async def rank(interaction: discord.Interaction):
     except Exception as e:
         await interaction.followup.send(f"Lỗi: {e}")
 
-@bot.tree.command(name="balance", description="Xem tài sản của bạn hoặc người khác")
-@app_commands.describe(member="Người bạn muốn soi ví (để trống nếu xem của mình)")
+@bot.tree.command(name="balance", description="Xem tài sản")
+@app_commands.describe(member="Người muốn xem (để trống là xem của mình)")
 async def balance(interaction: discord.Interaction, member: discord.Member = None):
     target = member or interaction.user
     user_data = get_user_data(target.id)
     bal = float(user_data.get('balance', 0))
     btc = float(user_data.get('btc', 0))
     
-    embed = discord.Embed(
-        title=f"💳 Ví của {target.display_name}",
-        color=discord.Color.blue()
-    )
+    embed = discord.Embed(title=f"💳 Ví của {target.display_name}", color=discord.Color.blue())
     if target.avatar:
         embed.set_thumbnail(url=target.avatar.url)
-    
     embed.add_field(name="💵 Tiền mặt", value=f"**{bal:,.2f} $**", inline=False)
     embed.add_field(name="🪙 Bitcoin", value=f"**{btc:.6f} BTC**", inline=False)
     embed.set_footer(text=f"ID: {target.id}")
-    
     await interaction.response.send_message(embed=embed)
 
 if __name__ == "__main__":
     keep_alive()
-    
-    print("🚀 Đang khởi động Bot...")
-    
+    print("🚀 Bot Starting...")
     while True:
         try:
             bot.run(BOT_TOKEN)
         except discord.errors.HTTPException as e:
             if e.status == 429:
-                print("==================================================")
-                print("❌ LỖI NGHIÊM TRỌNG: DISCORD RATE LIMIT (429)")
-                print("Bot đã bị Discord chặn IP tạm thời do khởi động lại quá nhiều.")
-                print("⏳ Hệ thống sẽ tự động ngủ 45 phút để chờ Discord mở khóa...")
-                print("==================================================")
+                print("❌ RATE LIMITED (429). Sleeping 45 mins...")
                 time.sleep(2700)
             else:
-                print(f"⚠️ Lỗi kết nối ({e}), thử lại sau 10s...")
+                print(f"⚠️ Connection Error: {e}. Retrying in 10s...")
                 time.sleep(10)
         except Exception as e:
-            print(f"❌ BOT BỊ CRASH: {e}")
-            print("⏳ Đợi 30s trước khi khởi động lại để tránh spam...")
+            print(f"❌ Critical Error: {e}. Restarting in 30s...")
             time.sleep(30)
