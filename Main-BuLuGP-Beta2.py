@@ -297,17 +297,5 @@ async def balance(interaction: discord.Interaction, member: discord.Member = Non
 
 if __name__ == "__main__":
     keep_alive()
-    print("🚀 Bot Starting...")
-    while True:
-        try:
-            bot.run(BOT_TOKEN)
-        except discord.errors.HTTPException as e:
-            if e.status == 429:
-                print("❌ RATE LIMITED (429). Sleeping 45 mins...")
-                time.sleep(2700)
-            else:
-                print(f"⚠️ Connection Error: {e}. Retrying in 10s...")
-                time.sleep(10)
-        except Exception as e:
-            print(f"❌ Critical Error: {e}. Restarting in 30s...")
-            time.sleep(30)
+print("🚀 Bot Starting...")
+bot.run(BOT_TOKEN)
