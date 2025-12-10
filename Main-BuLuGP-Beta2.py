@@ -277,5 +277,30 @@ async def balance(interaction: discord.Interaction):
     await interaction.response.send_message(f"💳 **{interaction.user.name}**\n💵 {user.get('balance',0):,.2f}\n🪙 {user.get('btc',0):.6f}")
 
 if __name__ == "__main__":
-    keep_alive()
-    bot.run(BOT_TOKEN)
+    keep_alive() # Chạy server ảo để giữ bot sống
+    
+    print("🚀 Đang khởi động Bot...")
+    
+    while True:
+        try:
+            bot.run(BOT_TOKEN)
+        except discord.errors.HTTPException as e:
+            if e.status == 429:
+                print("==================================================")
+                print("❌ LỖI NGHIÊM TRỌNG: DISCORD RATE LIMIT (429)")
+                print("Bot đã bị Discord chặn IP tạm thời do khởi động lại quá nhiều.")
+                print("⏳ Hệ thống sẽ tự động ngủ 45 phút để chờ Discord mở khóa...")
+                print("==================================================")
+                # Cho bot ngủ 45 phút (2700 giây) để hết lệnh cấm
+                import time
+                time.sleep(2700)
+            else:
+                # Các lỗi mạng khác thì đợi 10s rồi thử lại
+                print(f"⚠️ Lỗi kết nối ({e}), thử lại sau 10s...")
+                import time
+                time.sleep(10)
+        except Exception as e:
+            print(f"❌ BOT BỊ CRASH: {e}")
+            print("⏳ Đợi 30s trước khi khởi động lại để tránh spam...")
+            import time
+            time.sleep(30)
