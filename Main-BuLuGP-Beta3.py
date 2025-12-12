@@ -11,11 +11,35 @@ from pymongo.errors import ConnectionFailure
 from dotenv import load_dotenv
 import time
 from functools import partial
+import threading
+from http.server import HTTPServer, BaseHTTPRequestHandler
 
 # Load biến môi trường
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
+
+# --- PHẦN FIX LỖI RENDER (QUAN TRỌNG) ---
+# Tạo một Web Server đơn giản để Render ping vào và thấy bot đang chạy
+class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
+    def do_GET(self):
+        self.send_response(200)
+        self.send_header('Content-type', 'text/plain')
+        self.end_headers()
+        self.wfile.write(b"Bot is alive and running!")
+
+def start_web_server():
+    # Render sẽ tự động cấp cổng qua biến môi trường PORT, mặc định là 10000 nếu chạy local
+    port = int(os.environ.get("PORT", 10000))
+    server = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
+    print(f"🌍 Web server started on port {port}")
+    server.serve_forever()
+
+def keep_alive():
+    t = threading.Thread(target=start_web_server)
+    t.daemon = True
+    t.start()
+# ----------------------------------------
 
 # --- DATABASE SETUP ---
 DB_NAME = "DiscordBotDB"
@@ -62,7 +86,7 @@ def _update_user_balance_sync(user_id, balance_change=0, btc_change=0):
 def _get_all_users_sync():
     return list(users_col.find())
 
-# --- OPTIMIZED FUNCTIONS (SỬA LỖI BTC) ---
+# --- OPTIMIZED FUNCTIONS ---
 
 async def fetch_url(session, url):
     async with session.get(url, timeout=5) as response:
@@ -71,9 +95,6 @@ async def fetch_url(session, url):
     return None
 
 async def get_btc_price():
-    """
-    Sửa lỗi: Thử nhiều nguồn (Binance -> CoinGecko -> CoinDesk)
-    """
     current_time = time.time()
     if current_time - btc_cache["last_updated"] < btc_cache["ttl"]:
         return btc_cache["price"]
@@ -93,7 +114,7 @@ async def get_btc_price():
                 if data: price = float(data["bitcoin"]["usd"])
             except: pass
 
-        # 3. Nếu vẫn lỗi, thử CoinDesk (Rất ổn định)
+        # 3. Nếu vẫn lỗi, thử CoinDesk
         if price is None:
             try:
                 data = await fetch_url(session, "https://api.coindesk.com/v1/bpi/currentprice/USD.json")
@@ -105,7 +126,7 @@ async def get_btc_price():
         btc_cache["last_updated"] = current_time
         return price
     
-    return btc_cache["price"] # Trả về giá cũ nếu tất cả đều lỗi
+    return btc_cache["price"] 
 
 def load_questions():
     if not os.path.exists("questions.json"):
@@ -120,7 +141,6 @@ questions_bank = load_questions()
 active_games = {} 
 
 # --- DISCORD COMPONENTS ---
-# (Giữ nguyên TransactionModal và CryptoView như cũ)
 class TransactionModal(discord.ui.Modal):
     def __init__(self, action, current_price):
         super().__init__(title=f"{action} Bitcoin")
@@ -193,7 +213,7 @@ async def on_ready():
     print(f'🤖 Bot Online: {bot.user}')
     await bot.tree.sync()
 
-# --- GAME LOGIC (ĐÃ CẬP NHẬT) ---
+# --- GAME LOGIC ---
 async def game_loop(channel):
     channel_id = channel.id
     active_games[channel_id] = {"active": True, "fails": 0, "history": []}
@@ -203,7 +223,6 @@ async def game_loop(channel):
             await channel.send("⚠️ Hết câu hỏi.")
             break
 
-        # Chọn câu hỏi (Logic cũ)
         recent = active_games[channel_id]["history"]
         available = [i for i in range(len(questions_bank)) if i not in recent]
         if not available:
@@ -218,7 +237,6 @@ async def game_loop(channel):
         q_data = questions_bank[idx]
         correct_answer = q_data["answer"].lower().strip()
         
-        # --- THAY ĐỔI: Giảm thời gian còn 15s ---
         wait_time = 15 
         end_time = time.time() + wait_time
         
@@ -227,7 +245,6 @@ async def game_loop(channel):
         embed.add_field(name="Thời gian", value=f"⏳ <t:{int(end_time)}:R>")
         await channel.send(embed=embed)
 
-        # --- THAY ĐỔI: Cho phép trả lời sai nhiều lần ---
         winner = None
         
         while time.time() < end_time:
@@ -242,16 +259,14 @@ async def game_loop(channel):
 
                 if user_ans == correct_answer:
                     winner = msg.author
-                    break # Thoát vòng lặp trả lời ngay
+                    break 
                 else:
-                    # Nếu sai, thả react X và tiếp tục vòng lặp
                     try: await msg.add_reaction("❌")
                     except: pass
             
             except asyncio.TimeoutError:
                 break
         
-        # Xử lý kết quả sau khi vòng lặp kết thúc
         if winner:
             bonus = 36
             await run_db_task(_update_user_balance_sync, winner.id, balance_change=bonus)
@@ -289,7 +304,6 @@ async def stopgp(interaction: discord.Interaction):
     else:
         await interaction.response.send_message("Không có game nào.", ephemeral=True)
 
-# --- THAY ĐỔI: Lệnh Reload ---
 @bot.tree.command(name="reload_qs", description="Tải lại bộ câu hỏi từ file")
 async def reload_qs(interaction: discord.Interaction):
     global questions_bank
@@ -332,5 +346,9 @@ async def rank(interaction: discord.Interaction):
         await interaction.followup.send(f"Lỗi: {e}")
 
 if __name__ == "__main__":
-    if not BOT_TOKEN: print("Missing Token")
-    else: bot.run(BOT_TOKEN)
+    if not BOT_TOKEN: 
+        print("Missing Token")
+    else: 
+        # --- KÍCH HOẠT SERVER GIẢ TRƯỚC KHI CHẠY BOT ---
+        keep_alive() 
+        bot.run(BOT_TOKEN)
