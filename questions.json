@@ -601,11 +601,6 @@
         "answer": "Hạnh nhân hầu"
     },
     {
-        "question": "Chi tiết 17 là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00d0bef466ef620761ae6367c6147b1d.png",
-        "answer": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00d0bef466ef620761ae6367c6147b1d.png"
-    },
-    {
         "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
         "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/05ca50d10d7c0ca35b4f4329e8eab035.png",
         "answer": "Cổ Giải Phẫu"
@@ -1017,3 +1012,4 @@
     }
 
 ]
+
