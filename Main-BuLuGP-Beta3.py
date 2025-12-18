@@ -14,13 +14,16 @@ from functools import partial
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
+# --- CẤU HÌNH ---
 # Load biến môi trường
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
 
+# Cấu hình thời gian trả lời câu hỏi (giây)
+WAIT_TIME = 20 
+
 # --- PHẦN FIX LỖI RENDER (QUAN TRỌNG) ---
-# Tạo một Web Server đơn giản để Render ping vào và thấy bot đang chạy
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200)
@@ -29,7 +32,6 @@ class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
         self.wfile.write(b"Bot is alive and running!")
 
 def start_web_server():
-    # Render sẽ tự động cấp cổng qua biến môi trường PORT, mặc định là 10000 nếu chạy local
     port = int(os.environ.get("PORT", 10000))
     server = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
     print(f"🌍 Web server started on port {port}")
@@ -53,7 +55,8 @@ try:
     print("✅ Connected to MongoDB!")
 except Exception as e:
     print(f"❌ MongoDB Error: {e}")
-    exit()
+    # Không exit để test local nếu không có DB, nhưng nên có DB
+    pass
 
 # --- CACHE & CONFIG ---
 btc_cache = {
@@ -86,7 +89,7 @@ def _update_user_balance_sync(user_id, balance_change=0, btc_change=0):
 def _get_all_users_sync():
     return list(users_col.find())
 
-# --- OPTIMIZED FUNCTIONS ---
+# --- HELPER FUNCTIONS ---
 
 async def fetch_url(session, url):
     async with session.get(url, timeout=5) as response:
@@ -101,24 +104,15 @@ async def get_btc_price():
 
     price = None
     async with aiohttp.ClientSession() as session:
-        # 1. Thử Binance
         try:
             data = await fetch_url(session, "https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT")
             if data: price = float(data["price"])
         except: pass
 
-        # 2. Nếu lỗi, thử CoinGecko
         if price is None:
             try:
                 data = await fetch_url(session, "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
                 if data: price = float(data["bitcoin"]["usd"])
-            except: pass
-
-        # 3. Nếu vẫn lỗi, thử CoinDesk
-        if price is None:
-            try:
-                data = await fetch_url(session, "https://api.coindesk.com/v1/bpi/currentprice/USD.json")
-                if data: price = float(data["bpi"]["USD"]["rate_float"])
             except: pass
 
     if price:
@@ -130,7 +124,11 @@ async def get_btc_price():
 
 def load_questions():
     if not os.path.exists("questions.json"):
-        sample = [{"question": "1 + 1 = ?", "answer": "2", "image_url": None}]
+        # Mẫu json có ảnh
+        sample = [
+            {"question": "1 + 1 = ?", "answer": "2", "image_url": None},
+            {"question": "Đây là con gì?", "answer": "Mèo", "image_url": "https://i.imgur.com/example_cat.jpg"}
+        ]
         with open("questions.json", "w", encoding="utf-8") as f: json.dump(sample, f)
         return sample
     try:
@@ -140,7 +138,40 @@ def load_questions():
 questions_bank = load_questions()
 active_games = {} 
 
-# --- DISCORD COMPONENTS ---
+# --- VIEW: IMAGE GALLERY (MỚI) ---
+class GalleryView(discord.ui.View):
+    def __init__(self, questions_with_images):
+        super().__init__(timeout=120)
+        self.data = questions_with_images
+        self.index = 0
+        self.update_buttons()
+
+    def update_buttons(self):
+        # Vô hiệu hóa nút lùi nếu ở trang đầu
+        self.prev_btn.disabled = (self.index == 0)
+        # Vô hiệu hóa nút tiến nếu ở trang cuối
+        self.next_btn.disabled = (self.index == len(self.data) - 1)
+
+    def get_embed(self):
+        q = self.data[self.index]
+        embed = discord.Embed(title=f"🖼️ Thư viện ảnh ({self.index + 1}/{len(self.data)})", color=discord.Color.blue())
+        embed.description = f"**Câu hỏi:** {q['question']}\n**Đáp án:** ||{q['answer']}||"
+        embed.set_image(url=q['image_url'])
+        return embed
+
+    @discord.ui.button(label="⬅️ Trước", style=discord.ButtonStyle.primary)
+    async def prev_btn(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.index -= 1
+        self.update_buttons()
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+
+    @discord.ui.button(label="Tiếp ➡️", style=discord.ButtonStyle.primary)
+    async def next_btn(self, interaction: discord.Interaction, button: discord.ui.Button):
+        self.index += 1
+        self.update_buttons()
+        await interaction.response.edit_message(embed=self.get_embed(), view=self)
+
+# --- VIEW: BITCOIN TRANSACTION ---
 class TransactionModal(discord.ui.Modal):
     def __init__(self, action, current_price):
         super().__init__(title=f"{action} Bitcoin")
@@ -213,7 +244,7 @@ async def on_ready():
     print(f'🤖 Bot Online: {bot.user}')
     await bot.tree.sync()
 
-# --- GAME LOGIC ---
+# --- GAME LOGIC (ĐÃ SỬA THỜI GIAN) ---
 async def game_loop(channel):
     channel_id = channel.id
     active_games[channel_id] = {"active": True, "fails": 0, "history": []}
@@ -237,12 +268,15 @@ async def game_loop(channel):
         q_data = questions_bank[idx]
         correct_answer = q_data["answer"].lower().strip()
         
-        wait_time = 15 
-        end_time = time.time() + wait_time
+        # SỬ DỤNG BIẾN WAIT_TIME ĐỂ DỄ QUẢN LÝ
+        end_time = time.time() + WAIT_TIME
         
         embed = discord.Embed(title="🎯 TRIVIA!", description=f"**{q_data['question']}**", color=0xD4AF37)
         if q_data.get("image_url"): embed.set_image(url=q_data["image_url"])
-        embed.add_field(name="Thời gian", value=f"⏳ <t:{int(end_time)}:R>")
+        
+        # Hiển thị thời gian đếm ngược đẹp hơn
+        embed.add_field(name="Thời gian", value=f"⏳ <t:{int(end_time)}:R> ({WAIT_TIME}s)")
+        
         await channel.send(embed=embed)
 
         winner = None
@@ -310,6 +344,19 @@ async def reload_qs(interaction: discord.Interaction):
     questions_bank = load_questions()
     await interaction.response.send_message(f"✅ Đã tải lại! Hiện có **{len(questions_bank)}** câu hỏi.", ephemeral=True)
 
+# LỆNH MỚI: GALLERY
+@bot.tree.command(name="gallery", description="Xem tất cả ảnh trong bộ câu hỏi")
+async def gallery(interaction: discord.Interaction):
+    # Lọc ra các câu hỏi có chứa ảnh
+    questions_with_images = [q for q in questions_bank if q.get("image_url") and q["image_url"].strip()]
+    
+    if not questions_with_images:
+        await interaction.response.send_message("❌ Không có câu hỏi nào chứa ảnh trong dữ liệu.", ephemeral=True)
+        return
+    
+    view = GalleryView(questions_with_images)
+    await interaction.response.send_message(embed=view.get_embed(), view=view, ephemeral=True)
+
 @bot.tree.command(name="bitcoin", description="Xem giá BTC")
 async def bitcoin_cmd(interaction: discord.Interaction):
     await interaction.response.defer()
@@ -318,7 +365,7 @@ async def bitcoin_cmd(interaction: discord.Interaction):
     view = CryptoView(current_price=price)
     embed = discord.Embed(title="📊 SÀN BTC", description=f"Giá: **${price:,.2f}**", color=0xF7931A)
     embed.add_field(name="Ví bạn", value=f"💵 ${user['balance']:,.2f}\n🪙 {user['btc']:.6f} BTC")
-    embed.set_footer(text="Nguồn: Binance / CoinGecko / CoinDesk")
+    embed.set_footer(text="Nguồn: Binance / CoinGecko")
     await interaction.followup.send(embed=embed, view=view)
 
 @bot.tree.command(name="rank", description="Bảng xếp hạng")
@@ -349,6 +396,5 @@ if __name__ == "__main__":
     if not BOT_TOKEN: 
         print("Missing Token")
     else: 
-        # --- KÍCH HOẠT SERVER GIẢ TRƯỚC KHI CHẠY BOT ---
         keep_alive() 
         bot.run(BOT_TOKEN)
