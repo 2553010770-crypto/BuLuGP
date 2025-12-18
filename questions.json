@@ -1,303 +1,149 @@
 [
+    
     {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F01241aaa799f4edf32aab4cda23732ea.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "cơ vòng mắt"
+        "question": "Chi tiết (16) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9c0ec3b646b4ab15d6a8afd5c755937e.png",
+        "answer": "Tiểu quản lệ"
     },
     {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fb15f618e7c1d81df148f384cf75e0d06.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "cơ cắn"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fb58f019c01a830f250f19f329000f0e0.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Phần đá xương thái dương"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fc24b7140309f788448959f504862a714.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Các cơ bậc thang"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Facfda0ec88f2023b0aaee4f7425abfb1.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "ống tuyến nước bọt mang tai"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F7c41c891efc5fba879a8bb8e162d584f.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Phần nền xương chẩm"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F7d648d570e0f314adef95261b153438f.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ rách"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F2f18cbc395e0737c834ac3379d0d88a2.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mỏm yên bướm trước"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F171db65766c148e0ad4efab72c0c8eca.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Khẩu cái cứng"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F149d0eefc8f55b593657532962a037f8.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ giáp móng"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F6facd3293996b4891abc6baba753f32b.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Động mạch mặt"
+        "question": "Chi tiết 7 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/623c8c9261836ae74c3a1ceab32fef6e.png",
+        "answer": "Tĩnh mạch chủ trên"
     },
     {
         "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fbe35ef5b066d243b2cf126588071ad75.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Khuyết hàm dưới"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F09ca966cf7962757b2894221ec32d8b0.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Ụ chẩm ngoài"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fc407559fb8241ee01ec8bb881b2b9349.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ cằm"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b18b184cebd431a4e64939d9f1d2cc28.png",
+        "answer": "Động mạch cảnh chung trái"
     },
     {
         "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F374076919173b60bbfb085681e6e0b15.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ nâng vai"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fd2ebf50d450d95fd0d3bba694dbb4dfa.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ bán gai đầu"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/62c504b77b4080ba712592117b616ec8.png",
+        "answer": "Diện nguyệt"
     },
     {
         "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F01241aaa799f4edf32aab4cda23732ea.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ gò má lớn"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/3c0e521edd617c04c6e8bbaccf41e2a3.png",
+        "answer": "Cơ tam đầu"
     },
     {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F0f61aecab6013b06a8d3ff40e2a39525.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Động mạch mặt"
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/d7e637310fed4c0f65106e95f4a63369.png",
+        "answer": "Cơ gấp cổ tay quay"
+    },
+    {
+        "question": "Chi tiết (8) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f2d47297fd3b63af9d8d5ab98897add0.png",
+        "answer": "Thung lũng nắp thanh môn"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ab819a85a61a05375290bee3eef58c8a.png",
+        "answer": "Củ khớp"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/498bc74b3a351174e8fcfded32abc888.png",
+        "answer": "Cơ duỗi ngón chân cái dài"
     },
     {
         "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fb89ed32797c635a5409dad4188b686e8.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ trên ổ mắt"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b49ef311ceb898e06b6771189267cffa.png",
+        "answer": "Hố trên gai"
     },
     {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Ff27f1c4617ba7308e6b5b3f22a3c4c31.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ cắn"
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/7d126ecf4f046acd69cc17a9957e524c.png",
+        "answer": "Ổ miệng"
     },
     {
         "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F3022d89a0d63f8bba96b57990545723f.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Xương gò má"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F37865f6722d94ef7abc2f1e85a9cfa1c.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ nâng môi trên cánh mũi"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F8057c7f56e803045f93bf5239b2e6f74.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Phần ngang cánh mũi"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F8153e62b44d233aa83ef533b0fe2cd0d.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ cằm"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F25342c385a61c47cd034e721f2e9a08d.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Hố hàm dưới"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c26638f731cb8c18a49d51d6994e5ca4.png",
+        "answer": "Gai chậu trước trên"
     },
     {
         "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fc604992c3adc33d29658c46245941592.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Xương đỉnh"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/76a57c7d5ce638b6b7123dbff62710a3.png",
+        "answer": "Cơ cánh tay quay"
     },
     {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F1cad635a1ce57c222d8b44da669726f5.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ gối đầu"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fe8a07bfe988e460bf24fbfa7a1f71a93.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ mút"
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2b6032c821abb7356d074407ddbae516.png",
+        "answer": "Xương hộp"
     },
     {
         "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F425765088b371bffc80dc15c5169656e.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Phần trai xương thái dương"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F29e0e6f2624b4cbe02041d8182a7606b.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Động mạch mặt"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fe12fd34a7232a415ecd14da05ec370a0.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ cười"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/79f79945eb5b4f90eb4a8170a824f341.png",
+        "answer": "Cơ ngang bụng"
     },
     {
         "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fb3fc85fcc266acc934a85f1dc0bbd794.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ thái dương"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/44d2745a38472b2f7206ae024017efd6.png",
+        "answer": "Cơ khuỷu"
     },
     {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F260b190f498153a62cd3040a409938de.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ dưới ổ mắt"
+        "question": "Chi tiết 12 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/aa8e50918f77c3edaf09ec90250cc2ca.png",
+        "answer": "Mào lược"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/86e21107c549434f1f46d1f896595dea.png",
+        "answer": "Cơ dạng ngón cái dài"
     },
     {
         "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F28db14c3dcf07a3ad46c9c14d86153d3.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Tuyến nước bọt mang tai"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fe173525c3b4d51b92fa3eea0fe2822b.png",
+        "answer": "Gai chậu sau trên"
     },
     {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F917b11e01733752bc49d89611f3816d1.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mỏm lồi cầu xương hàm dưới"
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/7b07ec532ef4f83f239df105604b5491.png",
+        "answer": "Lồi củ quay"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f8d3420f5838541fb0f5cb62116e0962.png",
+        "answer": "Lồi cầu trong xương đùi"
     },
     {
         "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fa3312eb3906e5ac3903d8776a282442a.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ lớn xương chẩm"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F1d10170af4ca8b47a68a626466a6d9b1.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Động mạch dưới đòn"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F5102e21bbadf92dd15e44908df1a48dd.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Hội lưu xoang tĩnh mạch"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F4d4bd4cefceff9ea7e9c9ed156332e91.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Bụng trán cơ chẩm trán"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F4359c261d74ffe33335f10bc0823dea9.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Tuyến nước bọt mang tai"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F70f393a2c5a7294c2e6e4e62aed613ed.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mảnh đứng xương sàng"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F837105cefc18360bc97de1a09e51d59d.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Trai trán"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F78b035cba59ed3870613e12278559d49.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ bầu dục"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fa4de5caeed05159dad6b5e3a8e6df857.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mỏm chũm xương thái dương"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fc6d6da35b0f4410a3a4a508accdec5e2.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ ống tai trong"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fac2dfd48cbaf8cc8acfc0fccf0c2a774.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Hố răng cửa"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F2da8b0a7d9ddf30831920cd342ac2388.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ ống tai ngoài"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fb0d832ea865423096d7ee367d4ee755c.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Rãnh xoang tĩnh mạch sigma"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F36116c7c2f549cf2ef2af230f8c33303.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mỏm vẹt xương hàm dưới"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F442810f1121714b6fae4bde5ccb56765.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Lỗ tĩnh mạch cảnh"
-    },
-    {
-        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fc9a4746883ae29c23bfb4d3557dea811.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Tĩnh mạch dưới đòn"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F39c8871656f776fd4624e3278f07e0da.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ ức giáp"
-    },
-    {
-        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F3cfa74c11b2735bed4e4a738b08bf359.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ gò má bé"
-    },
-    {
-        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F2fe64ca49b751792e17ded2683ef6d1f.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Mào gà xương sàng"
-    },
-    {
-        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F016b6753850322ac7fb2c6c4b314d59a.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ nâng môi trên"
-    },
-    {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fe3912a75074ccd33a2b170d8444543b5.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e3912a75074ccd33a2b170d8444543b5.png",
         "answer": "Lồi cầu chẩm"
     },
     {
-        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2F41fb779e49ba3c9568ae0297b8845862.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Cơ hạ góc miệng"
+        "question": "Chi tiết (10) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b005c2a8d4ca3692ccbb6b68dd9107c6.png",
+        "answer": "Cơ nhẫn phễu"
+    },
+    {
+        "question": "Chi tiết (8) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/6ff89047e19dfcd6f208dd5edc64f3a9.png",
+        "answer": "Cơ thẳng dưới"
+    },
+    {
+        "question": "Chi tiết (17) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e39cf719430482dc775038f08f671335.png",
+        "answer": "Dây chằng mí ngoài"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/d2ebf50d450d95fd0d3bba694dbb4dfa.png",
+        "answer": "Cơ bán gai đầu"
     },
     {
         "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
-        "image_url": "https://facourse.com/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Ffaquiz2%2FTuLuan%2FChayTramGP-CTUMP%2Fe3d2b649af3dda54a240ba5bac791d99.png&w=1080&q=85&dpl=dpl_CfWWvcPgAVN6ydYL9t8FAWQRxFPp",
-        "answer": "Xương mũi"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/5d74b3c0db5de32961f1aa253a3bb06f.png",
+        "answer": "Mõm trên lồi cầu ngoài"
     },
     {
-        "question": "Chi tiết (19) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/cc5b0b09fbb3640cf5c4d9feed3cf5ef.png",
-        "answer": "Vách trong suốt"
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/260b190f498153a62cd3040a409938de.png",
+        "answer": "Lỗ dưới ổ mắt"
     },
     {
-        "question": "Chi tiết (11) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/921fc7c3232ab79a33542598e2c843f2.png",
-        "answer": "Khẩu cái cứng"
+        "question": "Chi tiết 14 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a9aa130ee39709c6866f4cb433b9a119.png",
+        "answer": "Gai chậu sau trên"
     },
     {
         "question": "Chi tiết (14) là chi tiết giải phẫu nào?",
@@ -305,49 +151,24 @@
         "answer": "Cơ ức đòn chũm"
     },
     {
-        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/dd5692e5e9ba3b16306eca44195e0efe.png",
-        "answer": "Xương mũi"
-    },
-    {
-        "question": "Chi tiết (7) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/036894d62019002e5548b5f2f4910c5c.png",
-        "answer": "Rãnh xoang tĩnh mạch củng mạc"
-    },
-    {
-        "question": "Chi tiết (16) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/1f5c32540c1c928f246d0918937f0c8d.png",
-        "answer": "Bóng ống bán khuyên"
-    },
-    {
-        "question": "Chi tiết (15) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/39d493dbce5a2ad98a23ec656deaf8b5.png",
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4359c261d74ffe33335f10bc0823dea9.png",
         "answer": "Tuyến nước bọt mang tai"
     },
     {
-        "question": "Chi tiết (8) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e72a9326204381ed0cb8145472fb0b45.png",
-        "answer": "Võng mạc"
-    },
-    {
-        "question": "Chi tiết (13) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/64b37398bc9bf53ff86bc1e96b0baaf5.png",
-        "answer": "Dây chằng móng nắp"
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/bbf7b50ccb73b9b81cc5ce5f6acb5c6e.png",
+        "answer": "Đầu ức"
     },
     {
         "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e2fa5c7d2089f309890fb66624034e55.png",
-        "answer": "Khuyết trên ổ mắt"
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/756a8c1ed83a8348b5291d9446b5a74b.png",
+        "answer": "Xoăn mũi dưới"
     },
     {
-        "question": "Chi tiết (20) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/58ce3eb0b155b2bcc106e9753b1c1c49.png",
-        "answer": "Tuyến yên"
-    },
-    {
-        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
-        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0e78948dee97eeaf7d0c319351576834.png",
-        "answer": "Bó mạch trung tâm võng mạc"
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f4b5d9f43b4bdf758eb12f1eaf88fd2b.png",
+        "answer": "Cơ ngực lớn"
     },
     {
         "question": "Chi tiết (17) là chi tiết giải phẫu nào?",
@@ -355,8 +176,844 @@
         "answer": "Ống óc tai"
     },
     {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/92794af9694430df47fcc1986973e2c2.png",
+        "answer": "Đường thang"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e5936682aeabe23aaa2ddab8c92c36fb.png",
+        "answer": "Hố mỏm khuỷu"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a01487dcadc12b7ad47e363719d01b71.png",
+        "answer": "Cơ thắt lưng lớn"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e2fa5c7d2089f309890fb66624034e55.png",
+        "answer": "Khuyết trên ổ mắt"
+    },
+    {
+        "question": "Chi tiết 14 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/10cff81bba8bc8c28e5948c5d7909790.png",
+        "answer": "Đường cung"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c9ed7fa39a5a8184817a2caedc4619f8.png",
+        "answer": "Gai chậu sau dưới"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/acfda0ec88f2023b0aaee4f7425abfb1.png",
+        "answer": "Ống tuyến nước bọt mang tai"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4d02b5a124e878d38e61300d9aaa6d15.png",
+        "answer": "Cơ vuông thắt lưng"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a8df90835d8a4a45ffffb281bf2241e7.png",
+        "answer": "Ròng rọc"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0540e06c5ad07ead129e61a8b09f4958.png",
+        "answer": "Cơ thang"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/627fc6558d3c6eaa642d69d15d7accb3.png",
+        "answer": "Cơ chày sau"
+    },
+    {
+        "question": "Chi tiết (14) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/452cba0158f0ed982470595a9aef577d.png",
+        "answer": "Ngách hình lên"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/36116c7c2f549cf2ef2af230f8c33303.png",
+        "answer": "Mõm vẹt xương hàm dưới"
+    },
+    {
+        "question": "Chi tiết (9) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fbc18308794bfb5b9c277961bc358336.png",
+        "answer": "Cơ ức đòn chủm"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/1c26b4627facbcdb0a28c6c4ed764bcd.png",
+        "answer": "Chỏm đùi"
+    },
+    {
+        "question": "Chi tiết 10 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f72928b1ee88659a9903543b2468b107.png",
+        "answer": "Diện mu"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c51a1e4d45f2c62a8f210ccf9b65a331.png",
+        "answer": "Cơ tam đầu"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/72b11ec142d8137ee56f0b17ce552276.png",
+        "answer": "Khuyết ngồi lớn"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/605af14901d85a3c6e35df1f1e04ec20.png",
+        "answer": "Mào bịt"
+    },
+    {
+        "question": "Chi tiết (8) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e72a9326204381ed0cb8145472fb0b45.png",
+        "answer": "Võng mạc"
+    },
+    {
+        "question": "Chi tiết (15) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e9dd02ec9db7380d4eaf63a227a17f88.png",
+        "answer": "Lỗ bầu dục"
+    },
+    {
+        "question": "Chi tiết (11) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/921fc7c3232ab79a33542598e2c843f2.png",
+        "answer": "Khẩu cái cứng"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c26fa1f85d4a0f08d3e9d74882b19dca.png",
+        "answer": "Chỏm xương quay"
+    },
+    {
+        "question": "Chi tiết (7) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/036894d62019002e5548b5f2f4910c5c.png",
+        "answer": "Rãnh xoang tĩnh mạch củng mạc"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/679ece331ee39cec6d62a9f55dcb680e.png",
+        "answer": "Ròng rọc"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a05cde3c454b2116fcb38834c1e5e3e5.png",
+        "answer": "Đường cơ dép"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/425765088b371bffc80dc15c5169656e.png",
+        "answer": "Phần trai xương thái dương"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/691f99ba22502c8836efd43b7534408a.png",
+        "answer": "Khuyết ngồi lớn"
+    },
+    {
+        "question": "Chi tiết (11) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f05cbe2a9eaa827ec5c411d02ecc0e7e.png",
+        "answer": "Vòng sụn màng nhĩ"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/6facd3293996b4891abc6baba753f32b.png",
+        "answer": "Động mạch mặt"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b681ebf283f033cc68d38d383537a7be.png",
+        "answer": "Cơ gấp ngón chân cái dài"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/12abfb67f32481f64cc7d34e31a31b78.png",
+        "answer": "Khuyết quay"
+    },
+    {
+        "question": "Chi tiết (15) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9512a79258f92bcd9fcca4dba701c30a.png",
+        "answer": "Xoắn tai"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/02fdf1ee882f184dbb0897b78fdddb1d.png",
+        "answer": "Cơ duỗi các ngón chân dài"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ff4294a41372bd8f8cd361487522338f.png",
+        "answer": "Mắt cá chân trong"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9f09c95590c9943a659b18c03b3db3b7.png",
+        "answer": "Củ mu"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4e65af39d82ac0af193541eff07d83d1.png",
+        "answer": "Khuyết vai"
+    },
+    {
+        "question": "Chi tiết 8 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/776390b9b35e367c1954b1f7f1e0363c.png",
+        "answer": "Mỏm trên lồi cầu ngoài"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/353d7eb0d42ea0b6c0a600f86b61259b.png",
+        "answer": "Chỏm xương cánh tay"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/432594ecaf83f6a198f9c32917322fba.png",
+        "answer": "Tuyến yên"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/82c03257216a54414be9a5d7f46120e8.png",
+        "answer": "Cơ chày trước"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2993734c7090e75284d466232718ba77.png",
+        "answer": "Đầu trong cơ bụng chân"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/717541ad09f082fe295cd9b6a622a31f.png",
+        "answer": "Ba xương chêm"
+    },
+    {
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/cbe9e40e75b220807b498940cf84e702.png",
+        "answer": "Gân cơ chéo trên"
+    },
+    {
+        "question": "Chi tiết (20) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/58ce3eb0b155b2bcc106e9753b1c1c49.png",
+        "answer": "Tuyến yên"
+    },
+    {
+        "question": "Chi tiết 10 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c034f22afc8398b9cbf4a8704432f222.png",
+        "answer": "Gai ngồi"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/819b62dbd4dd12059b28bc3207a68384.png",
+        "answer": "Cơ duỗi chung các ngón"
+    },
+    {
+        "question": "Chi tiết 10 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b9610bd3397d9db34d62a5a914e48da1.png",
+        "answer": "Rãnh gian củ"
+    },
+    {
+        "question": "Chi tiết 7 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ff23e5e3d61643834977dfa6d379270d.png",
+        "answer": "Lỗ bịt"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c80ff9d33e4a187e371f2d82462aba84.png",
+        "answer": "Lỗ tĩnh mạch cảnh"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2a1fab31edea8cf09752a08a54156d95.png",
+        "answer": "Khuyết ổ cối"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4ba23ac78c1302e6772e5d168012ada9.png",
+        "answer": "Thóp lamđa"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0e34816a39f21a3127603eb4acfc5b5c.png",
+        "answer": "Mõm trên lồi cầu trong"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/6fed61433fbd2d88450f09b7aa0e2c2a.png",
+        "answer": "Cơ chày trước"
+    },
+    {
+        "question": "Chi tiết 11 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f6110dccc6db1f1ff829c915798d9be2.png",
+        "answer": "Củ lớn"
+    },
+    {
+        "question": "Chi tiết (18) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/37d8a380c814a44e0fcc3e3f239e5c5e.png",
+        "answer": "Phần ổ mắt tuyến lệ"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ab4611660378071598f6d0a5b181a1b0.png",
+        "answer": "Mấu chuyển lớn"
+    },
+    {
+        "question": "Vị trí số (8) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c1c483cb2188e114f9f3b83ed4d4b1d9.png",
+        "answer": "Cơ sấp tròn"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/8350f54791f915ff782cf2c7e2380ee5.png",
+        "answer": "Gai chậu trước dưới"
+    },
+    {
+        "question": "Chi tiết 7 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00f4e3b2062104a894e7e6399b39968b.png",
+        "answer": "Cơ duỗi cổ tay quay ngắn"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/dd5692e5e9ba3b16306eca44195e0efe.png",
+        "answer": "Xương mũi"
+    },
+    {
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0e78948dee97eeaf7d0c319351576834.png",
+        "answer": "Bó mạch trung tâm võng mạc"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9564e1cb25b17f3cdaf30e8a1561af54.png",
+        "answer": "Cơ dưới đòn"
+    },
+    {
+        "question": "Chi tiết (12) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9716d32bd9d87858c4501be8b95d9d10.png",
+        "answer": "Sụn ống tai ngoài"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/cbe84a22f882b0afcc6ba4f6b637a20c.png",
+        "answer": "Hố dưới gai"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/d47c149ebcbaae7281d7e35cd0749c04.png",
+        "answer": "Cổ xương vai"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fc5c87c5d5ed9006f636f763964385a0.png",
+        "answer": "Bờ trong xương vai"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/01241aaa799f4edf32aab4cda23732ea.png",
+        "answer": "Cơ gò má lớn"
+    },
+    {
+        "question": "Chi tiết 8 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0f6f28084d5eac4a2d6fb3e07e194b19.png",
+        "answer": "Lồi củ trụ"
+    },
+    {
+        "question": "Chi tiết (19) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/d436991256267d0c45e188526926b631.png",
+        "answer": "Cơ nâng môi trên và cánh mũi"
+    },
+    {
+        "question": "Chi tiết (10) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0a61b854ea6deca7531b378a08ec8962.png",
+        "answer": "Cơ vai móng"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fd342cfd20622d07e435c47a762755e8.png",
+        "answer": "Cơ chày trước"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4d4bd4cefceff9ea7e9c9ed156332e91.png",
+        "answer": "Bụng trán cơ chẩm trán"
+    },
+    {
+        "question": "Chi tiết 9 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ab8ec5e0ccdbfd55aace520657891163.png",
+        "answer": "Cơ duỗi ngón cái ngắn"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/eeccc9d69a4545cca6973b25fcf39eb5.png",
+        "answer": "Mắt cá chân ngoài"
+    },
+    {
+        "question": "Chi tiết 12 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/72fcd382e00295d1a42170e2d762f610.png",
+        "answer": "Khuyết ngồi lớn"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/bfb8679e7c18504877d1a502b52575d6.png",
+        "answer": "Cơ gấp các ngón chân dài"
+    },
+    {
+        "question": "Chi tiết (9) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/6952ae3ae54c19750a1e4c868e90d02a.png",
+        "answer": "Nếp phễu nắp"
+    },
+    {
+        "question": "Chi tiết 13 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/51436332cfdd5c2a415768da75ac55bf.png",
+        "answer": "Gai chậu sau dưới"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/172d750044109a6fc93c1a48bf0cde6b.png",
+        "answer": "Cơ tròn lớn"
+    },
+    {
+        "question": "Chi tiết (20) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/85f198ce89a1c7794d9f450c58ecd97e.png",
+        "answer": "Cơ hạ góc miệng"
+    },
+    {
+        "question": "Chi tiết 9 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4edcaeaf223dd1b5d57ee16f7572f234.png",
+        "answer": "Hố quay"
+    },
+    {
+        "question": "Chi tiết 7 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/7d6fddac5d0294ed3671ec0d2c69d750.png",
+        "answer": "Cơ gang tay dài"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/3f9881efa4717e664ebc0a92f082364a.png",
+        "answer": "Cơ duỗi cổ tay trụ"
+    },
+    {
+        "question": "Chi tiết (7) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/75d2e037475a0abc707600bc353c87a4.png",
+        "answer": "Hạnh nhân hầu"
+    },
+    {
+        "question": "Chi tiết 17 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00d0bef466ef620761ae6367c6147b1d.png",
+        "answer": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00d0bef466ef620761ae6367c6147b1d.png"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/05ca50d10d7c0ca35b4f4329e8eab035.png",
+        "answer": "Cổ Giải Phẫu"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/1088f883eb63b28ab089f1add86ce2ac.png",
+        "answer": "Cơ gan tay dài"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/443503d9a44572dd4a51dae1b316950a.png",
+        "answer": "Lồi củ chậu"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/19ef198f1bc2b675af5449d3db34ecbc.png",
+        "answer": "Lồi củ xương quay"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2ed5b319673ff73d3ec057c8ec347585.png",
+        "answer": "Gai chậu trước dưới"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2f18cbc395e0737c834ac3379d0d88a2.png",
+        "answer": "Mõm yên bướm trước"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/071dc3a9c51527f39807095ded9cbf7d.png",
+        "answer": "Xương khẩu cái"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/848c2cfbc2a298b0a5db64703e026b55.png",
+        "answer": "Xương chẩm"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/442810f1121714b6fae4bde5ccb56765.png",
+        "answer": "Lỗ tĩnh mạch cảnh"
+    },
+    {
         "question": "Chi tiết (12) là chi tiết giải phẫu nào?",
         "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a2cab74806d22636e643afa9e1cbf919.png",
         "answer": "Lỗ hầu vòi tai"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e9b8dae7bfbadb7d1246b8088a8311f2.png",
+        "answer": "Cơ cánh tay"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/cf393db73f9cb235aff6ae99b76fa49e.png",
+        "answer": "Bờ gian cốt"
+    },
+    {
+        "question": "Chi tiết (11) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2fdfdc4ef86082c7663d5283d72cafd7.png",
+        "answer": "Gân vòng chung"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f04cde08ca513e8ba84a280bdc1afd15.png",
+        "answer": "Gai ngồi"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/32e5635d7005c93cbe0d14f8c1a6746c.png",
+        "answer": "Cơ thẳng trên"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/1c10ca675b1d38b05dc88806fb8b15cf.png",
+        "answer": "Diện bánh chè"
+    },
+    {
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/db47686e1f87115cfbd99411e4dba9da.png",
+        "answer": "Cơ gan chân"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e8a07bfe988e460bf24fbfa7a1f71a93.png",
+        "answer": "Cơ mút"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/7c3f2b177eca6f9a97bd4fbfdd37626d.png",
+        "answer": "Ụ ngồi"
+    },
+    {
+        "question": "Vị trí số (1) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/3db393badcbe955ebcd7d0b0e0caa729.png",
+        "answer": "Cơ dưới gai"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/158fa15bac6ddd87d2348c8b69c385cb.png",
+        "answer": "Động mạch chày trước"
+    },
+    {
+        "question": "Chi tiết (13) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/64b37398bc9bf53ff86bc1e96b0baaf5.png",
+        "answer": "Dây chằng móng nắp"
+    },
+    {
+        "question": "Chi tiết 8 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/49064e42c8a376078dc7ba906e67023f.png",
+        "answer": "Ụ ngồi"
+    },
+    {
+        "question": "Vị trí số (3) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/62b502395210a9006b6cb51addbbc083.png",
+        "answer": "Cơ lưng rộng"
+    },
+    {
+        "question": "Vị trí số (9) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0fa72cd5cccaae34c8e225d9debb3134.png",
+        "answer": "Cơ gấp cổ tay quay"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/326eb89332399c78596a5ad2f4a00c57.png",
+        "answer": "Cơ Delta"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9da1512d95020ff6f51fc5b991c3a2ea.png",
+        "answer": "Hố hàm dưới"
+    },
+    {
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c98a5008aeee9df075bb088e86513d7f.png",
+        "answer": "Gân gót"
+    },
+    {
+        "question": "Chi tiết 2 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/117628770f75aa4e675129c0a2712506.png",
+        "answer": "Xương đòn"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a7192fdbf26a22363e20c9535b21bb9a.png",
+        "answer": "Gai chậu trước trên"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fa0c0b95d625f8b36d5a6b6e9b956cf9.png",
+        "answer": "Cơ quạ cánh tay"
+    },
+    {
+        "question": "Chi tiết 9 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a05dabee08bb73a12c8077be8f08dae5.png",
+        "answer": "Mỏm vẹt"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ef726eb3e115207de83c88d2a2b02c0b.png",
+        "answer": "Rãnh dưới đòn"
+    },
+    {
+        "question": "Chi tiết 6 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/ad3c2b2222797a1c14dad3c879913aa1.png",
+        "answer": "Bờ gian cốt"
+    },
+    {
+        "question": "Chi tiết (15) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/39d493dbce5a2ad98a23ec656deaf8b5.png",
+        "answer": "Tuyến nước bọt mang tai"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/8a0bb908c0dd31ad39248ddf2b517a31.png",
+        "answer": "Cơ mác dài"
+    },
+    {
+        "question": "Chi tiết (6) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/44738422eb108ed5010d2c585749a84a.png",
+        "answer": "Cơ khoeo"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/0f61aecab6013b06a8d3ff40e2a39525.png",
+        "answer": "Động mạch mặt"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/7c2b8dc3734e2d20e16b4e72dba7ec7d.png",
+        "answer": "Đầu trong cơ bụng chân"
+    },
+    {
+        "question": "Vị trí số (2) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e39a2e3845927d74053a634c2508ebec.png",
+        "answer": "Cơ tam đầu cánh tay"
+    },
+    {
+        "question": "Chi tiết (12) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c1e460eeb626429f1dff53836fab2b74.png",
+        "answer": "Bao dây thị giác"
+    },
+    {
+        "question": "Chi tiết 10 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/66849b0d154efe511534d96708957577.png",
+        "answer": "Cơ dưới gai"
+    },
+    {
+        "question": "Chi tiết (13) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/573b8ed1184473c5c7139f2afc6e787d.png",
+        "answer": "Sụn nắp"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/2da8b0a7d9ddf30831920cd342ac2388.png",
+        "answer": "Lỗ ống tai ngoài"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/fe00fbe52cea44f537440497c6a349c8.png",
+        "answer": "Thần kinh mác sau"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/823ed3c5569c8911eee6e584311cc936.png",
+        "answer": "Cơ chậu"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4c6c5076ee0707c25319b717e178b916.png",
+        "answer": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4c6c5076ee0707c25319b717e178b916.png"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f563c303318bba3d706b68a06311d859.png",
+        "answer": "Cơ dép"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c45db7fd146fbef337a3c86ceeea113b.png",
+        "answer": "Cơ chày sau"
+    },
+    {
+        "question": "Chi tiết (4) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/89c8d7836e979ec993b3fad56cc89964.png",
+        "answer": "Cổ xương đùi"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/6e34fe14b2331e35b47c33fe0b07598d.png",
+        "answer": "Cơ duỗi chung các ngón chân"
+    },
+    {
+        "question": "Chi tiết (1) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/3bdc2ccfc0487921f80097731358428b.png",
+        "answer": "Khớp dọc"
+    },
+    {
+        "question": "Chi tiết (16) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/1f5c32540c1c928f246d0918937f0c8d.png",
+        "answer": "Bóng ống bán khuyên"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/117491f508b64b8a19e6228a7b037c5f.png",
+        "answer": "Mặt trong xương chày"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/390c39615aa067aedc1bae9277cdff9a.png",
+        "answer": "Hố chân bướm"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e9b074f112754584a56aace10f303687.png",
+        "answer": "Cơ dép"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/908afd7b6b0854fbdcdd9cdc777e0b67.png",
+        "answer": "Góc trên xương vai"
+    },
+    {
+        "question": "Chi tiết (17) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/752088132c58062b611f8ac30a732de4.png",
+        "answer": "Tuyến yên"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/00b5b056611d831f7f29e1794a8206fc.png",
+        "answer": "Cơ sấp tròn"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c9a4746883ae29c23bfb4d3557dea811.png",
+        "answer": "Tĩnh mạch dưới đòn"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e209099c11ead88bae61d52a5450dc1b.png",
+        "answer": "Mắt cá trong"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/37865f6722d94ef7abc2f1e85a9cfa1c.png",
+        "answer": "Cơ nâng môi trên cánh mũi"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e12fd34a7232a415ecd14da05ec370a0.png",
+        "answer": "Cơ cười"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b77b9fd3d2e814378aa460a6f463aa24.png",
+        "answer": "Cơ gấp các ngón chân dài"
+    },
+    {
+        "question": "Chi tiết (14) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/867b365868a4053a2d6dea4f87ea5600.png",
+        "answer": "Cánh nhỏ xương bướm"
+    },
+    {
+        "question": "Chi tiết 9 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/991c9ce6d5d98d1040fac3949c484bd3.png",
+        "answer": "Gấp chung ngón nông"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/e79ed5c58d59d8585511bb576456dc5b.png",
+        "answer": "Cơ mác ngắn"
+    },
+    {
+        "question": "Vị trí số (4) là gì?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/dcbf06fd6db362c2c66bc0f4dc52031a.png",
+        "answer": "Cơ thang"
+    },
+    {
+        "question": "Chi tiết (7) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/115c2d7415a8e89490165d47c3477956.png",
+        "answer": "Cơ liên phễu"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/81de21a210d335a478cf7179a7dec624.png",
+        "answer": "Cơ duỗi các ngón chân dài"
+    },
+    {
+        "question": "Chi tiết 9 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/b5b27a4094fcfbe11760392d6c1e6e13.png",
+        "answer": "Lỗ bịt"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/a3312eb3906e5ac3903d8776a282442a.png",
+        "answer": "Lỗ lớn xương chẩm"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/32661ae8e244d07819144ea66a9be266.png",
+        "answer": "Cơ vòng mắt"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/f5d0768b4d392a34f30d581946ce613d.png",
+        "answer": "Cơ chậu"
+    },
+    {
+        "question": "Chi tiết 3 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/8153e62b44d233aa83ef533b0fe2cd0d.png",
+        "answer": "Lỗ cằm"
+    },
+    {
+        "question": "Chi tiết 1 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/9694d7e35aa46f6b87faa0b5e083700b.png",
+        "answer": "Tuyến yên"
+    },
+    {
+        "question": "Chi tiết (2) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/86e40c3a4550156ebbb3e3b89ae292cf.png",
+        "answer": "Mỏm khuỷu"
+    },
+    {
+        "question": "Chi tiết (5) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/4e36c6e582b6b4a96ce99d5149eefc07.png",
+        "answer": "Củ gian lồi cầu trong"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/c24b7140309f788448959f504862a714.png",
+        "answer": "Các cơ bậc thang"
+    },
+    {
+        "question": "Chi tiết 5 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/befb0a37b7156fde45a8ef58ec29d63d.png",
+        "answer": "Tĩnh mạch giáp dưới"
+    },
+    {
+        "question": "Chi tiết 4 là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/3022d89a0d63f8bba96b57990545723f.png",
+        "answer": "Xương gò má"
+    },
+    {
+        "question": "Chi tiết (3) là chi tiết giải phẫu nào?",
+        "image_url": "https://storage.googleapis.com/faquiz2/TuLuan/ChayTramGP-CTUMP/49e2b8437b9ee0305124e8d069a8a902.png",
+        "answer": "Cơ gấp các ngón chân dài"
     }
+
 ]
