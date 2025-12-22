@@ -7,7 +7,6 @@ import asyncio
 import aiohttp
 import os
 import pymongo
-from pymongo.errors import ConnectionFailure
 from dotenv import load_dotenv
 import time
 from functools import partial
@@ -20,8 +19,11 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
 IMAGE_STORAGE_CHANNEL_ID = 1452547718248398931
-
 WAIT_TIME = 12
+
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+}
 
 class SimpleHTTPRequestHandler(BaseHTTPRequestHandler):
     def do_GET(self):
@@ -95,6 +97,12 @@ def _insert_many_sync(data_list):
     if data_list:
         questions_col.insert_many(data_list)
 
+def _update_question_image_sync(obj_id_str, new_url):
+    questions_col.update_one(
+        {"_id": ObjectId(obj_id_str)}, 
+        {"$set": {"image_url": new_url}}
+    )
+
 def _delete_question_sync(index):
     if 0 <= index < len(questions_cache):
         q_id = questions_cache[index]['_id']
@@ -109,35 +117,36 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 async def process_image_url(url):
-    if not url:
-        return None
-    
+    if not url: return None
     url = str(url).strip()
-    if "discordapp.com" in url or "discordapp.net" in url:
+    
+    if not url or "discordapp.com" in url or "discordapp.net" in url:
         return url
         
     try:
         channel = bot.get_channel(IMAGE_STORAGE_CHANNEL_ID)
         if not channel:
-            print("Storage Channel not found")
-            return url
+            print(f"Channel {IMAGE_STORAGE_CHANNEL_ID} not found")
+            return url 
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(url) as resp:
+            async with session.get(url, headers=HEADERS, timeout=10) as resp:
                 if resp.status != 200:
+                    print(f"Download failed {resp.status}: {url}")
                     return url
                 
                 data = await resp.read()
-                filename = url.split("/")[-1].split("?")[0]
-                if not filename: filename = "image.png"
+                filename = "image.png"
+                if ".jpg" in url: filename = "image.jpg"
+                elif ".jpeg" in url: filename = "image.jpeg"
                 
                 file_obj = discord.File(io.BytesIO(data), filename=filename)
-                msg = await channel.send(file=file_obj)
+                msg = await channel.send(content=f"Source: <{url}>", file=file_obj)
                 
                 if msg.attachments:
                     return msg.attachments[0].url
     except Exception as e:
-        print(f"Image process error: {e}")
+        print(f"Image Error: {e}")
         return url
     
     return url
@@ -149,92 +158,113 @@ async def on_ready():
     await bot.tree.sync()
 
 @bot.tree.command(name="add_q", description="Thêm câu hỏi thủ công")
-@app_commands.describe(question="Câu hỏi", answer="Đáp án", image_url="Link ảnh (tùy chọn)")
 async def add_q(interaction: discord.Interaction, question: str, answer: str, image_url: str = None):
     await interaction.response.defer(ephemeral=True)
-    
-    final_image_url = await process_image_url(image_url)
-    
-    await run_db_task(_add_question_sync, question, answer, final_image_url)
+    final_url = await process_image_url(image_url)
+    await run_db_task(_add_question_sync, question, answer, final_url)
     refresh_questions_cache()
     
-    embed = discord.Embed(title="Đã thêm câu hỏi", color=discord.Color.green())
-    embed.add_field(name="Hỏi", value=question, inline=False)
-    embed.add_field(name="Đáp án", value=answer, inline=False)
-    if final_image_url: embed.set_image(url=final_image_url)
+    embed = discord.Embed(title="Done", color=discord.Color.green())
+    embed.add_field(name="Q", value=question)
+    embed.add_field(name="A", value=answer)
+    if final_url: embed.set_image(url=final_url)
     await interaction.followup.send(embed=embed)
 
-@bot.tree.command(name="upload_json", description="Nạp câu hỏi từ file JSON")
-@app_commands.describe(file="File .json chứa danh sách câu hỏi")
+@bot.tree.command(name="upload_json", description="Nạp JSON và tự động đổi link ảnh")
 async def upload_json(interaction: discord.Interaction, file: discord.Attachment):
     if not file.filename.endswith('.json'):
-        return await interaction.response.send_message("❌ Vui lòng tải lên file .json", ephemeral=True)
+        return await interaction.response.send_message("File must be .json", ephemeral=True)
     
     await interaction.response.defer(ephemeral=True)
-    
     try:
         file_content = await file.read()
         data = json.loads(file_content)
         
         if not isinstance(data, list):
-            return await interaction.followup.send("❌ Cấu trúc JSON phải là một danh sách (Array).")
+            return await interaction.followup.send("JSON must be a list")
             
-        valid_questions = []
-        count_processed = 0
+        valid_qs = []
+        await interaction.followup.send(f"Processing {len(data)} items...", ephemeral=True)
         
         for item in data:
             if "question" in item and "answer" in item:
                 original_url = item.get("image_url")
                 new_url = await process_image_url(original_url)
                 
-                q_obj = {
+                valid_qs.append({
                     "question": item["question"],
                     "answer": item["answer"],
                     "image_url": new_url
-                }
-                valid_questions.append(q_obj)
-                count_processed += 1
+                })
                 
-                if count_processed % 10 == 0:
-                    await asyncio.sleep(1)
+                if original_url and "http" in original_url:
+                    await asyncio.sleep(1.5)
         
-        if valid_questions:
-            await run_db_task(_insert_many_sync, valid_questions)
+        if valid_qs:
+            await run_db_task(_insert_many_sync, valid_qs)
             refresh_questions_cache()
-            await interaction.followup.send(f"✅ Đã nhập thành công **{len(valid_questions)}** câu hỏi! (Ảnh đã được backup)", ephemeral=True)
+            await interaction.followup.send(f"Success: {len(valid_qs)} imported", ephemeral=True)
         else:
-            await interaction.followup.send("⚠️ Không tìm thấy câu hỏi hợp lệ trong file.", ephemeral=True)
-            
-    except json.JSONDecodeError:
-        await interaction.followup.send("❌ Lỗi định dạng JSON.", ephemeral=True)
+            await interaction.followup.send("No valid data found", ephemeral=True)
     except Exception as e:
-        await interaction.followup.send(f"❌ Lỗi hệ thống: {e}", ephemeral=True)
+        await interaction.followup.send(f"Error: {e}", ephemeral=True)
+
+@bot.tree.command(name="convert_all_images", description="Quét và chuyển đổi toàn bộ link ảnh")
+async def convert_all_images(interaction: discord.Interaction):
+    await interaction.response.defer(ephemeral=True)
+    all_questions = await run_db_task(lambda: list(questions_col.find()))
+    
+    count_fixed = 0
+    count_total = len(all_questions)
+    
+    await interaction.followup.send(f"Scanning {count_total} questions...", ephemeral=True)
+    
+    for index, q in enumerate(all_questions):
+        original_url = q.get("image_url")
+        q_id = str(q["_id"])
+        
+        if original_url and "http" in original_url and "discordapp" not in original_url:
+            try:
+                new_url = await process_image_url(original_url)
+                if new_url != original_url:
+                    await run_db_task(_update_question_image_sync, q_id, new_url)
+                    count_fixed += 1
+                    await asyncio.sleep(1.5)
+            except Exception as e:
+                print(f"Error {q_id}: {e}")
+        
+        if index % 10 == 0 and index > 0:
+            try:
+                await interaction.edit_original_response(content=f"Processing... ({index}/{count_total}) | Fixed: {count_fixed}")
+            except: pass
+
+    refresh_questions_cache()
+    await interaction.followup.send(f"Done. Fixed: {count_fixed}", ephemeral=True)
 
 @bot.tree.command(name="del_q", description="Xóa câu hỏi theo STT")
 async def del_q(interaction: discord.Interaction, index: int):
     await interaction.response.defer(ephemeral=True)
-    success = await run_db_task(_delete_question_sync, index - 1)
-    if success:
+    if await run_db_task(_delete_question_sync, index - 1):
         refresh_questions_cache()
-        await interaction.followup.send(f"Đã xóa câu hỏi số {index}.", ephemeral=True)
+        await interaction.followup.send(f"Deleted #{index}", ephemeral=True)
     else:
-        await interaction.followup.send("Số thứ tự không tồn tại.", ephemeral=True)
+        await interaction.followup.send("Invalid index", ephemeral=True)
 
 @bot.tree.command(name="view_qs", description="Xem danh sách câu hỏi")
 async def view_qs(interaction: discord.Interaction):
     if not questions_cache:
-        return await interaction.response.send_message("Danh sách trống.", ephemeral=True)
+        return await interaction.response.send_message("Empty", ephemeral=True)
     
     desc = ""
     for i, q in enumerate(questions_cache):
         has_img = "🖼️" if q.get("image_url") else ""
-        line = f"**#{i+1}** {has_img} {q['question']} (ĐA: ||{q['answer']}||)\n"
+        line = f"**#{i+1}** {has_img} {q['question']} (A: ||{q['answer']}||)\n"
         if len(desc) + len(line) > 3900:
             desc += "..."
             break
         desc += line
     
-    embed = discord.Embed(title=f"Ngân hàng câu hỏi ({len(questions_cache)})", description=desc, color=discord.Color.blue())
+    embed = discord.Embed(description=desc, color=discord.Color.blue())
     await interaction.response.send_message(embed=embed, ephemeral=True)
 
 async def game_loop(channel):
@@ -243,17 +273,14 @@ async def game_loop(channel):
     
     while active_games.get(channel_id, {}).get("active"):
         if not questions_cache:
-            await channel.send("Database trống.")
+            await channel.send("DB Empty", silent=True)
             break
 
         total_qs = len(questions_cache)
         history = active_games[channel_id]["history"]
-        
         limit_n = int(total_qs * 0.75)
         
-        while len(history) > limit_n:
-            history.pop(0)
-
+        while len(history) > limit_n: history.pop(0)
         available = [i for i in range(total_qs) if i not in history]
         
         if not available:
@@ -262,26 +289,30 @@ async def game_loop(channel):
 
         idx = random.choice(available)
         active_games[channel_id]["history"].append(idx)
-
-        q_data = questions_cache[idx]
-        correct_answer = str(q_data["answer"]).lower().strip()
-        end_time = time.time() + WAIT_TIME
+        q = questions_cache[idx]
         
-        embed = discord.Embed(title="TRIVIA!", description=f"**{q_data['question']}**", color=0xD4AF37)
-        if q_data.get("image_url") and str(q_data["image_url"]).startswith("http"):
-             embed.set_image(url=q_data["image_url"])
-        embed.add_field(name="Thời gian", value=f"⏳ <t:{int(end_time)}:R>")
+        visual_end_time = time.time() + WAIT_TIME
         
-        await channel.send(embed=embed)
-
+        embed = discord.Embed(title="TRIVIA", description=f"**{q['question']}**", color=0xD4AF37)
+        if q.get("image_url") and "http" in str(q["image_url"]): 
+            embed.set_image(url=q["image_url"])
+        embed.add_field(name="Time", value=f"⏳ <t:{int(visual_end_time)}:R>")
+        
+        await channel.send(embed=embed, silent=True)
+        
+        actual_end_time = time.time() + WAIT_TIME + 0.5
         winner = None
-        while time.time() < end_time:
-            remaining = end_time - time.time()
+        
+        while time.time() < actual_end_time:
+            remaining = actual_end_time - time.time()
             if remaining <= 0: break
             try:
-                def check(m): return m.channel.id == channel_id and not m.author.bot
-                msg = await bot.wait_for('message', check=check, timeout=remaining)
-                if msg.content.lower().strip() == correct_answer:
+                msg = await bot.wait_for(
+                    'message', 
+                    check=lambda m: m.channel.id == channel_id and not m.author.bot, 
+                    timeout=remaining
+                )
+                if msg.content.lower().strip() == str(q["answer"]).lower().strip():
                     winner = msg.author
                     break 
                 else:
@@ -291,39 +322,38 @@ async def game_loop(channel):
                 break
         
         if winner:
-            bonus = 36
-            await run_db_task(_update_user_balance_sync, winner.id, balance_change=bonus)
-            await channel.send(f"✅ Chính xác! <@{winner.id}> +${bonus}.")
+            await run_db_task(_update_user_balance_sync, winner.id, balance_change=36)
+            await channel.send(f"✅ Correct! <@{winner.id}> +$36", silent=True)
             active_games[channel_id]["fails"] = 0
             await asyncio.sleep(2)
         else:
-            await channel.send(f"⏰ Hết giờ! Đáp án: **{q_data['answer']}**")
+            await channel.send(f"⏰ Time's up! A: **{q['answer']}**", silent=True)
             active_games[channel_id]["fails"] += 1
 
         if active_games[channel_id]["fails"] >= 5:
-            await channel.send("Game Over.")
+            await channel.send("Game Over", silent=True)
             active_games[channel_id]["active"] = False
         
         await asyncio.sleep(3)
 
     active_games.pop(channel_id, None)
 
-@bot.tree.command(name="startgp", description="Bắt đầu game")
+@bot.tree.command(name="startgp")
 async def startgp(interaction: discord.Interaction):
     if interaction.channel_id in active_games:
-        return await interaction.response.send_message("Game đang chạy!", ephemeral=True)
+        return await interaction.response.send_message("Running!", ephemeral=True)
     if not questions_cache:
-        return await interaction.response.send_message("Database trống.", ephemeral=True)
-    await interaction.response.send_message("🎮 Bắt đầu!")
+        return await interaction.response.send_message("DB Empty", ephemeral=True)
+    await interaction.response.send_message("🎮 Started!")
     bot.loop.create_task(game_loop(interaction.channel))
 
-@bot.tree.command(name="stopgp", description="Dừng game")
+@bot.tree.command(name="stopgp")
 async def stopgp(interaction: discord.Interaction):
     if interaction.channel_id in active_games:
         active_games[interaction.channel_id]["active"] = False
-        await interaction.response.send_message("Đang dừng game...", ephemeral=True)
+        await interaction.response.send_message("Stopping...", ephemeral=True)
     else:
-        await interaction.response.send_message("Không có game nào.", ephemeral=True)
+        await interaction.response.send_message("No game found", ephemeral=True)
 
 if __name__ == "__main__":
     if not BOT_TOKEN: 
