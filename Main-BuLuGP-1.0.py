@@ -14,10 +14,12 @@ from functools import partial
 import threading
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from bson.objectid import ObjectId
+import io
 
 load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 MONGO_URI = os.getenv("MONGO_URI")
+IMAGE_STORAGE_CHANNEL_ID = 1452547718248398931
 
 WAIT_TIME = 12
 
@@ -106,6 +108,40 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
+async def process_image_url(url):
+    if not url:
+        return None
+    
+    url = str(url).strip()
+    if "discordapp.com" in url or "discordapp.net" in url:
+        return url
+        
+    try:
+        channel = bot.get_channel(IMAGE_STORAGE_CHANNEL_ID)
+        if not channel:
+            print("Storage Channel not found")
+            return url
+
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url) as resp:
+                if resp.status != 200:
+                    return url
+                
+                data = await resp.read()
+                filename = url.split("/")[-1].split("?")[0]
+                if not filename: filename = "image.png"
+                
+                file_obj = discord.File(io.BytesIO(data), filename=filename)
+                msg = await channel.send(file=file_obj)
+                
+                if msg.attachments:
+                    return msg.attachments[0].url
+    except Exception as e:
+        print(f"Image process error: {e}")
+        return url
+    
+    return url
+
 @bot.event
 async def on_ready():
     print(f'Bot Online: {bot.user}')
@@ -116,12 +152,16 @@ async def on_ready():
 @app_commands.describe(question="Câu hỏi", answer="Đáp án", image_url="Link ảnh (tùy chọn)")
 async def add_q(interaction: discord.Interaction, question: str, answer: str, image_url: str = None):
     await interaction.response.defer(ephemeral=True)
-    await run_db_task(_add_question_sync, question, answer, image_url)
+    
+    final_image_url = await process_image_url(image_url)
+    
+    await run_db_task(_add_question_sync, question, answer, final_image_url)
     refresh_questions_cache()
+    
     embed = discord.Embed(title="Đã thêm câu hỏi", color=discord.Color.green())
     embed.add_field(name="Hỏi", value=question, inline=False)
     embed.add_field(name="Đáp án", value=answer, inline=False)
-    if image_url: embed.set_image(url=image_url)
+    if final_image_url: embed.set_image(url=final_image_url)
     await interaction.followup.send(embed=embed)
 
 @bot.tree.command(name="upload_json", description="Nạp câu hỏi từ file JSON")
@@ -140,19 +180,28 @@ async def upload_json(interaction: discord.Interaction, file: discord.Attachment
             return await interaction.followup.send("❌ Cấu trúc JSON phải là một danh sách (Array).")
             
         valid_questions = []
+        count_processed = 0
+        
         for item in data:
             if "question" in item and "answer" in item:
+                original_url = item.get("image_url")
+                new_url = await process_image_url(original_url)
+                
                 q_obj = {
                     "question": item["question"],
                     "answer": item["answer"],
-                    "image_url": item.get("image_url") 
+                    "image_url": new_url
                 }
                 valid_questions.append(q_obj)
+                count_processed += 1
+                
+                if count_processed % 10 == 0:
+                    await asyncio.sleep(1)
         
         if valid_questions:
             await run_db_task(_insert_many_sync, valid_questions)
             refresh_questions_cache()
-            await interaction.followup.send(f"✅ Đã nhập thành công **{len(valid_questions)}** câu hỏi từ file!", ephemeral=True)
+            await interaction.followup.send(f"✅ Đã nhập thành công **{len(valid_questions)}** câu hỏi! (Ảnh đã được backup)", ephemeral=True)
         else:
             await interaction.followup.send("⚠️ Không tìm thấy câu hỏi hợp lệ trong file.", ephemeral=True)
             
